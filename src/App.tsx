@@ -1,10 +1,14 @@
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Login from "./pages/Login";
+import NewInvestment from "./pages/NewInvestment";
 
 function App() {
   return (
-    <>
-      <h1>Hello World</h1>
-    </>
+    <Routes>
+      <Route path='/' element={<Login />} />
+      <Route path='/new-investment' element={<NewInvestment />} />
+    </Routes>
   );
 }
 
