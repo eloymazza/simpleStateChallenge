@@ -1,17 +1,23 @@
 @import url("./reset.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
+  --root-font-size: 14px;
+  font-size: var(--root-font-size);
+
   /* Main Colors */
   --background-color--primary: #ffffff;
   --background-color--secondary: #f4f4f4;
   --element-color--primary: #3bd4ae;
   --element-color--secondary: #979797;
+  --text-color--primary: #585858;
+  --text-color-contrast--primary: #1f1646;
 
   /* Text  */
-  --font-family: "Monserrat", sans-serif;
-  --font-size--large: 1.3125rem;
-  --font-size--medium: 0.875rem;
+  --main-font-family: "Monserrat", sans-serif;
   --font-size--small: 0.75rem;
+  --font-size--medium: 1rem;
+  --font-size--large: 1.25rem;
 
   --font-weight--bold: 600;
   --font-weight--normal: 400;
@@ -28,17 +34,29 @@
   --spacing-x8: calc(var(--base-space) * 8);
   --spacing-x9: calc(var(--base-space) * 9);
   --spacing-x10: calc(var(--base-space) * 10);
+  --spacing-x11: calc(var(--base-space) * 11);
   --spacing-x12: calc(var(--base-space) * 12);
   --spacing-x14: calc(var(--base-space) * 14);
+  --spacing-x15: calc(var(--base-space) * 15);
   --spacing-x16: calc(var(--base-space) * 16);
   --spacing-x20: calc(var(--base-space) * 20);
-  --spacing-x24: calc(var(--base-space) * 24);
-  --spacing-x28: calc(var(--base-space) * 28);
-  --spacing-x32: calc(var(--base-space) * 32);
-  --spacing-x36: calc(var(--base-space) * 36);
+  --spacing-x25: calc(var(--base-space) * 25);
+  --spacing-x30: calc(var(--base-space) * 24);
+  --spacing-x35: calc(var(--base-space) * 35);
   --spacing-x40: calc(var(--base-space) * 40);
   --spacing-x64: calc(var(--base-space) * 44);
 
-  /* Border Radius */
-  --border-radius: 15px;
+  /* Border  */
+  --border-radius: 5px;
+  --border-color: #585858;
+
+  /*Basic Elements */
+  --input-border: 1px solid var(--border-color);
+  --button-border-radius: 25px;
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    --base-space: calc(1rem / 3);
+  }
 }

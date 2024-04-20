@@ -1,0 +1,27 @@
+.button {
+  cursor: pointer;
+  font-size: var(--font-size--medium);
+  border-radius: var(--button-border-radius);
+  padding: var(--spacing-x3) var(--spacing-x10);
+  font-weight: var(--font-weight--bold);
+}
+
+.primary {
+  background-color: var(--element-color--primary);
+  color: var(--text-color-contrast--primary);
+  border: none;
+}
+
+.small {
+  padding: var(--spacing-x3) var(--spacing-x6);
+}
+
+.large {
+  padding: var(--spacing-x3) var(--spacing-x20);
+}
+
+.disabled {
+  cursor: not-allowed;
+  background-color: var(--element-color--secondary);
+  color: var(--text-color--primary);
+}
