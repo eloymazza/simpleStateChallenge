@@ -1,0 +1,26 @@
+.main {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  padding: var(--spacing-x40) var(--spacing-x10);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: var(--spacing-x5) var(--spacing-x10);
+}
+
+@media screen and (max-width: 500px) {
+  .main {
+    padding: var(--spacing-x25) var(--spacing-x5) var(--spacing-x10)
+      var(--spacing-x5);
+  }
+
+  .container {
+    padding: 0;
+  }
+}
