@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TextInput from "./UI/TextInput";
 import Button from "./UI/Button";
 import styles from "./LoginForm.module.css";
+import useLogin from "../hooks/useLogin";
+import { useNavigate } from "react-router-dom";
+import { ROUTES_PATHS } from "../constants";
 
 const LoginForm = () => {
   const [email, setEmail] = React.useState("");
@@ -10,8 +13,18 @@ const LoginForm = () => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const disabled = !email || !emailRegex.test(email) || !password;
 
+  const { login, isLoggedIn } = useLogin();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate(ROUTES_PATHS.NEW_INVESTMENT);
+    }
+  }, [isLoggedIn, navigate]);
+
   const handleFormSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    login(email, password);
   };
 
   const handleChangeEmail = (value: string) => {

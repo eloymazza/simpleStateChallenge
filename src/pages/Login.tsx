@@ -1,7 +1,8 @@
 import LoginForm from "../components/LoginForm";
 import CompanyLogo from "../components/UI/CompanyLogo";
-import CustomHeader from "../components/UI/CustomHeader";
+import CustomHeader from "../components/CustomHeader";
 import style from "./Login.module.css";
+import AlreadyHasAccount from "../components/AlreadyHasAccount";
 
 const Login = () => {
   return (
@@ -12,12 +13,7 @@ const Login = () => {
         </div>
         <CustomHeader />
         <LoginForm />
-        <p>
-          ¿Ya tienes cuenta?
-          <a style={{ fontWeight: "bold" }} href='/'>
-            inicia sesión
-          </a>
-        </p>
+        <AlreadyHasAccount />
       </section>
     </main>
   );

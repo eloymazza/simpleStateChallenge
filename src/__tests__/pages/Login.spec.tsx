@@ -1,8 +1,25 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import Login from "../../pages/Login";
+import { LoginResponse } from "../../types";
+import { ROUTES_PATHS } from "../../constants";
+
+const mockedUseNavigate = vi.fn();
+vi.mock("react-router-dom", async () => {
+  const mod = await vi.importActual<typeof import("react-router-dom")>(
+    "react-router-dom"
+  );
+  return {
+    ...mod,
+    useNavigate: () => mockedUseNavigate
+  };
+});
 
 describe("Login Page", () => {
+  beforeEach(() => {
+    vi.resetAllMocks();
+  });
+
   afterEach(() => {
     cleanup();
   });
@@ -47,5 +64,35 @@ describe("Login Page", () => {
     fireEvent.change(passwordInput, { target: { value: "secretpassword" } });
 
     expect(loginButton.disabled).toBe(false);
+  });
+
+  it("redirects to new investment page when user is logged in", async () => {
+    const mockResponse: LoginResponse = {
+      token: "token"
+    };
+
+    vi.spyOn(window, "fetch").mockImplementationOnce(() => {
+      return Promise.resolve({
+        json: () => Promise.resolve(mockResponse)
+      } as Response);
+    });
+
+    render(<Login />);
+    const emailInput = screen.getByTestId("email-input");
+    const passwordInput = screen.getByTestId("password-input");
+    const loginButton = screen.getByTestId<HTMLButtonElement>("login-button");
+    expect(loginButton.disabled).toBe(true);
+
+    fireEvent.change(emailInput, { target: { value: "test@gmail.com" } });
+    fireEvent.change(passwordInput, { target: { value: "secretpassword" } });
+
+    expect(loginButton.disabled).toBe(false);
+    fireEvent.click(loginButton);
+
+    await vi.waitFor(() => {
+      expect(mockedUseNavigate).toHaveBeenCalledWith(
+        ROUTES_PATHS.NEW_INVESTMENT
+      );
+    });
   });
 });
