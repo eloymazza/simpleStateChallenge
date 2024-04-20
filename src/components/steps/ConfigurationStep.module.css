@@ -1,0 +1,12 @@
+.controlGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--spacing-x20);
+  row-gap: var(--spacing-x4);
+}
+
+.subLabel {
+  margin: var(--spacing-x2) 0;
+  font-style: italic;
+  font-size: var(--font-size--small);
+}

@@ -1,0 +1,6 @@
+.header {
+  height: 8%;
+  padding-left: var(--spacing-x30);
+  display: flex;
+  align-items: center;
+}

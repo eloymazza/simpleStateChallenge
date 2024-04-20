@@ -1,0 +1,5 @@
+.title {
+  font-size: var(--font-size--xlarge);
+  font-weight: bolder;
+  color: var(--text-color-title);
+}
