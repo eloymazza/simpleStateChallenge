@@ -1,5 +1,12 @@
+import InvestmentStepper from "../components/InvestmentStepper";
+import styles from "./NewInvestment.module.css";
+
 const NewInvestment = () => {
-  return <div>NewInvestment</div>;
+  return (
+    <section className={styles.container}>
+      <InvestmentStepper />
+    </section>
+  );
 };
 
 export default NewInvestment;

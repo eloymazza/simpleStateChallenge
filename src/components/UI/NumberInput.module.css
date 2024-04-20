@@ -1,0 +1,16 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-x2);
+  width: 100%;
+}
+
+.container input {
+  height: var(--spacing-x11);
+  border: var(--input-border);
+  padding: var(--spacing-x3);
+  border: 1xp solid gray;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size--medium);
+}
