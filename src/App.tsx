@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import NewInvestment from "./pages/NewInvestment";
 import UnderConstruction from "./pages/UnderConstruction";
-import { ROUTES_PATHS } from "./constants";
+import { ROUTES_PATHS } from "./utils/constants";
 import Layout from "./components/UI/Layout";
 
 const { LOGIN, NEW_INVESTMENT, FORGOT_PASSWORD, LEARN_MORE } = ROUTES_PATHS;

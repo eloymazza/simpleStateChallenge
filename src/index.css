@@ -52,9 +52,9 @@
   --border-radius: 5px;
   --border-radius-large: 15px;
   --border-color: #585858;
+  --border-dashed: 1px dashed #585858;
 
   /*Basic Elements */
-
   --input-border: 1px solid var(--border-color);
   --button-border-radius: 25px;
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { loginUser } from "../services/login";
-import { LoginResponse } from "../types";
+import { LoginResponse } from "../utils/types";
 
 const useLogin = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
