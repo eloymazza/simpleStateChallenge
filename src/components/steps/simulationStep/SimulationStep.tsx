@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import useSimulateInvestment from "../../hooks/useSimulateInvestment";
-import Card from "../UI/Card";
+import useSimulateInvestment from "../../../hooks/useSimulateInvestment";
+import Card from "../../UI/Card";
 import styles from "./SimulationStep.module.css";
 
 type Props = {

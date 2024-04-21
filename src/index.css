@@ -12,6 +12,8 @@
   --element-color--secondary: #979797;
   --text-color--primary: #585858;
   --text-color-contrast--primary: #1f1646;
+  --color-purple: #e2e2fe;
+  --color-light-green: #c4f2e7;
 
   /* Text  */
   --text-color-title: #000000;
@@ -49,7 +51,9 @@
   --spacing-x64: calc(var(--base-space) * 44);
 
   /* Border  */
+  --border-radius-small: 3px;
   --border-radius: 5px;
+  --border-radius-medium: 10px;
   --border-radius-large: 15px;
   --border-color: #585858;
   --border-dashed: 1px dashed #585858;

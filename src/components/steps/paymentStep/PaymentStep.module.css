@@ -1,0 +1,33 @@
+.container {
+  padding: var(--spacing-x3) var(--spacing-x4);
+}
+
+.container span {
+  font-weight: bolder;
+}
+
+.paymentHeaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-x15);
+}
+
+.paymentHeaderContainer > div {
+  width: 45%;
+}
+
+.bankAccountData {
+  margin-top: var(--spacing-x8);
+  margin-bottom: var(--spacing-x20);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-x6);
+}
+
+.row > div {
+  width: 45%;
+}

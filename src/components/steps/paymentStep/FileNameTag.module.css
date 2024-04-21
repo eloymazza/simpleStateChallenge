@@ -1,0 +1,13 @@
+.fileTagContainer {
+  display: flex;
+  gap: var(--spacing-x3);
+}
+
+.fileTag {
+  font-weight: normal;
+}
+
+.clearTagButton {
+  font-weight: normal;
+  cursor: pointer;
+}

@@ -1,10 +1,10 @@
-import Card from "../UI/Card";
-import CustomSelect from "../UI/CustomSelect";
-import NumberInput from "../UI/NumberInput";
+import Card from "../../UI/Card";
+import CustomSelect from "../../UI/CustomSelect";
+import NumberInput from "../../UI/NumberInput";
 import styles from "./ConfigurationStep.module.css";
-import { InvestmentConfig } from "../InvestmentStepper";
-import useCurrencies from "../../hooks/useCurrencies";
-import useInvestmentsTypes from "../../hooks/useInvestmentsTypes";
+import { InvestmentConfig } from "../../InvestmentStepper";
+import useCurrencies from "../../../hooks/useCurrencies";
+import useInvestmentsTypes from "../../../hooks/useInvestmentsTypes";
 
 type Props = {
   setConfig: (key: keyof InvestmentConfig, value: string) => void;

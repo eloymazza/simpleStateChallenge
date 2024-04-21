@@ -2,15 +2,15 @@ import { useState } from "react";
 import Button from "./UI/Button";
 import Title from "./UI/Title";
 import styles from "./InvestmentStepper.module.css";
-import ConfigurationStep from "./steps/ConfigurationStep";
+import ConfigurationStep from "./steps/configurationStep/ConfigurationStep";
 import {
   PAYMENT_STEP,
   SIMULATION_STEP,
   useInvestmentStepper
 } from "../hooks/useInvestmentStepper";
 import StepperBackButton from "./steps/StepperBackButton";
-import SimulationStep from "./steps/SimulationStep";
-import PaymentStep from "./steps/PaymentStep";
+import SimulationStep from "./steps/simulationStep/SimulationStep";
+import PaymentStep from "./steps/paymentStep/PaymentStep";
 
 export type InvestmentConfig = {
   type: string;
