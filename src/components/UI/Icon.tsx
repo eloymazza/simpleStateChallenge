@@ -1,4 +1,4 @@
-export type IconKey = "show-password" | "hide-password";
+export type IconKey = "show-password" | "hide-password" | "attach-file";
 
 export default function Icon({
   src,

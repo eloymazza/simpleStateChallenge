@@ -2,7 +2,8 @@ export const ROUTES_PATHS = {
   LOGIN: "/",
   NEW_INVESTMENT: "/new-investment",
   FORGOT_PASSWORD: "/forgot-password",
-  LEARN_MORE: "/learn-more"
+  LEARN_MORE: "/learn-more",
+  TERMS_AND_CONDITIONS: "/terms-and-conditions"
 };
 
 export const API_URL =

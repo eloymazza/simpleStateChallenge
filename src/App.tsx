@@ -6,7 +6,13 @@ import UnderConstruction from "./pages/UnderConstruction";
 import { ROUTES_PATHS } from "./utils/constants";
 import Layout from "./components/UI/Layout";
 
-const { LOGIN, NEW_INVESTMENT, FORGOT_PASSWORD, LEARN_MORE } = ROUTES_PATHS;
+const {
+  LOGIN,
+  NEW_INVESTMENT,
+  FORGOT_PASSWORD,
+  LEARN_MORE,
+  TERMS_AND_CONDITIONS
+} = ROUTES_PATHS;
 
 function App() {
   return (
@@ -17,6 +23,7 @@ function App() {
       </Route>
       <Route path={FORGOT_PASSWORD} element={<UnderConstruction />} />
       <Route path={LEARN_MORE} element={<UnderConstruction />} />
+      <Route path={TERMS_AND_CONDITIONS} element={<UnderConstruction />} />
       <Route path='*' element={<h1>Not Found</h1>} />
     </Routes>
   );

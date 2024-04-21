@@ -9,3 +9,11 @@ body {
 #root {
   height: 100%;
 }
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}

@@ -1,0 +1,30 @@
+.container {
+  display: inline-block;
+  border-radius: var(--border-radius-medium);
+}
+
+.medium {
+  font-size: var(--font-size-medium);
+  padding: var(--spacing-x3) var(--spacing-x4);
+}
+
+.small {
+  font-size: var(--font-size-small);
+  padding: var(--spacing-x2) var(--spacing-x2);
+}
+
+.purple {
+  background-color: var(--color-purple);
+}
+
+.lightgreen {
+  background-color: var(--color-light-green);
+}
+
+.radiusmedium {
+  border-radius: var(--border-radius-medium);
+}
+
+.radiussmall {
+  border-radius: var(--border-radius-small);
+}

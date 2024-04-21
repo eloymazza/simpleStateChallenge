@@ -14,7 +14,7 @@ const StepperBackButton = ({ step, onClick }: Props) => {
         step === CONFIGURATION_STEP ? styles.hide : ""
       }`}
     >
-      <a className={styles.backButton}>Volver</a>
+      {"<"} <a className={styles.backButton}>Volver</a>
     </div>
   );
 };

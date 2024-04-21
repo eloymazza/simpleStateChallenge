@@ -1,18 +1,18 @@
 import { useEffect } from "react";
-import useSimulateInvestment from "../../hooks/useSimulateInvestment";
-import Card from "../UI/Card";
+import useSimulateInvestment from "../../../hooks/useSimulateInvestment";
+import Card from "../../UI/Card";
 import styles from "./SimulationStep.module.css";
 
 type Props = {
   currency: string;
   type: string;
-  ammount: string;
+  amount: string;
   setSimulationLoaded: (value: boolean) => void;
 };
 
 const SimulationStep = ({
   currency,
-  ammount,
+  amount,
   type,
   setSimulationLoaded
 }: Props) => {
@@ -49,13 +49,13 @@ const SimulationStep = ({
           <div>
             Total de la inversión:{" "}
             <span>
-              {currency} ${ammount}
+              {currency} ${amount}
             </span>
           </div>
           <div>
             Ganancia anual estimada:{" "}
             <span>
-              {currency} ${(profitability / 100) * Number(ammount)}
+              {currency} ${(profitability / 100) * Number(amount)}
             </span>
           </div>
         </div>
@@ -82,7 +82,7 @@ const SimulationStep = ({
           <div>
             Recibiras al final del plazo:{" "}
             <span>
-              {currency} {Number(ammount) + profitability_amount} $
+              {currency} {Number(amount) + profitability_amount} $
             </span>
           </div>
           <div> Cuando cobraras las ganancias: {payment} </div>
