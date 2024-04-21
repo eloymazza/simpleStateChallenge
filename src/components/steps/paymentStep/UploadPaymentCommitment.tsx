@@ -1,21 +1,26 @@
 import { useState } from "react";
 import Icon from "../../UI/Icon";
-import Tag from "../../UI/Tag";
 import styles from "./UploadPaymentCommitment.module.css";
 import FileNameTag from "./FileNameTag";
 
-const UploadPaymentCommitment = () => {
+type Props = {
+  handleFileLoad: (value: boolean) => void;
+};
+
+const UploadPaymentCommitment = ({ handleFileLoad }: Props) => {
   const [file, setFile] = useState<File | null>(null);
 
   const handleAddFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       setFile(file);
+      handleFileLoad(true);
     }
   };
 
   const handleRemoveFile = () => {
     setFile(null);
+    handleFileLoad(false);
   };
 
   return (

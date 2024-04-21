@@ -10,7 +10,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--spacing-x15);
+  margin-bottom: var(--spacing-x12);
 }
 
 .paymentHeaderContainer > div {
@@ -19,7 +19,7 @@
 
 .bankAccountData {
   margin-top: var(--spacing-x8);
-  margin-bottom: var(--spacing-x20);
+  margin-bottom: var(--spacing-x15);
 }
 
 .row {

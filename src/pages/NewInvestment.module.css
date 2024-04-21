@@ -1,4 +1,7 @@
 .container {
   height: 100%;
-  padding: var(--spacing-x10) 20%;
+  padding: var(--spacing-x10) 10%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }

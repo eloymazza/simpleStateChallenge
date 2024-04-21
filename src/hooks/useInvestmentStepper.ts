@@ -5,6 +5,7 @@ export const CONFIGURATION_STEP = "CONFIGURATION";
 export const SIMULATION_STEP = "SIMULATION";
 export const PAYMENT_STEP = "PAYMENT";
 export const STEPS = [CONFIGURATION_STEP, SIMULATION_STEP, PAYMENT_STEP];
+export const MAX_STEP = STEPS.length - 1;
 
 export const useInvestmentStepper = () => {
   const [stepNumber, setStepNumber] = useState(0);
@@ -12,6 +13,7 @@ export const useInvestmentStepper = () => {
   const stepName = STEPS[stepNumber];
 
   const goNextStep = () => {
+    if (stepNumber === MAX_STEP) return;
     setStepNumber(stepNumber + 1);
   };
 
@@ -23,12 +25,16 @@ export const useInvestmentStepper = () => {
   const isNextStepEnabled = ({
     type,
     currency,
-    ammount,
-    simulationLoaded
+    amount,
+    simulationLoaded,
+    fileLoaded,
+    termsAndconditionsAccepted
   }: InvestmentConfig) => {
     if (stepName === CONFIGURATION_STEP)
-      return !!type && !!currency && !!ammount;
+      return !!type && !!currency && !!amount;
     if (stepName === SIMULATION_STEP) return simulationLoaded;
+    if (stepName === PAYMENT_STEP)
+      return fileLoaded && termsAndconditionsAccepted;
     return false;
   };
 

@@ -1,9 +1,19 @@
 .stepperContainer {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-x10);
+  width: 100%;
+  max-width: var(--stepper-section-max-width);
+}
+
+.backButtonContainer {
+  margin-bottom: var(--spacing-x8);
+}
+
+.titleContainer {
+  margin-bottom: var(--spacing-x8);
 }
 
 .continueButtonContainer {
   text-align: right;
+  margin-top: var(--spacing-x3);
 }

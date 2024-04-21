@@ -3,4 +3,5 @@
   box-shadow: 0px 0px 10px 0px #bdbdbd40;
   background-color: white;
   padding: var(--spacing-x8);
+  margin: var(--spacing-x4) 0;
 }
