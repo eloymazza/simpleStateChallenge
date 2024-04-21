@@ -22,7 +22,7 @@ const ConfigurationStep = ({ setConfig }: Props) => {
           <CustomSelect
             label='Tipo de Inversión*'
             options={investmensTypesOptions}
-            onChange={(value: string) => setConfig("investmentType", value)}
+            onChange={(value: string) => setConfig("type", value)}
             loading={loadingInvestmentsTypes}
           />
           <p className={styles.subLabel}>
@@ -32,12 +32,12 @@ const ConfigurationStep = ({ setConfig }: Props) => {
         <CustomSelect
           label='Moneda*'
           options={currenciesOptions}
-          onChange={(value: string) => setConfig("selectedCurrency", value)}
+          onChange={(value: string) => setConfig("currency", value)}
           loading={loadingCurrencies}
         />
         <NumberInput
           label='Monto a invertir*'
-          onChange={(value) => setConfig("investedAmmount", value)}
+          onChange={(value) => setConfig("ammount", value)}
         />
       </div>
     </Card>

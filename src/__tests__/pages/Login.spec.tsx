@@ -1,8 +1,8 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import Login from "../../pages/Login";
-import { LoginResponse } from "../../types";
-import { ROUTES_PATHS } from "../../constants";
+import { LoginResponse } from "../../utils/types";
+import { ROUTES_PATHS } from "../../utils/constants";
 
 const mockedUseNavigate = vi.fn();
 vi.mock("react-router-dom", async () => {

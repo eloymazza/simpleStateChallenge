@@ -4,7 +4,7 @@ import Button from "./UI/Button";
 import styles from "./LoginForm.module.css";
 import useLogin from "../hooks/useLogin";
 import { useNavigate } from "react-router-dom";
-import { ROUTES_PATHS } from "../constants";
+import { ROUTES_PATHS } from "../utils/constants";
 
 const LoginForm = () => {
   const [email, setEmail] = React.useState("");
