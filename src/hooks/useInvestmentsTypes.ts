@@ -24,8 +24,8 @@ const useInvestmentsTypes = () => {
         return;
       }
       const { data } = body;
-      const currs = Object.values(data).map((key) => key);
-      setInvestmentsTypes(currs);
+      const investmentTypes = Object.values(data).map((key) => key);
+      setInvestmentsTypes(investmentTypes);
       setLoading(false);
     };
     getInvestmentTypes();

@@ -122,6 +122,7 @@ const InvestmentStepper = () => {
             handleClick={handleContinue}
             disabled={!stepEnabled}
             size='large'
+            testId='continue-button'
           />
         ) : storing ? (
           <p>Guardando inversión...</p>
@@ -131,6 +132,7 @@ const InvestmentStepper = () => {
             handleClick={handleFinish}
             disabled={!stepEnabled}
             size='large'
+            testId='finish-button'
           />
         )}
       </div>
