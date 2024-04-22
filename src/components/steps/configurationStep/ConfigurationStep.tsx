@@ -38,6 +38,7 @@ const ConfigurationStep = ({ setConfig }: Props) => {
         <NumberInput
           label='Monto a invertir*'
           onChange={(value) => setConfig("amount", value)}
+          min={0}
         />
       </div>
     </Card>

@@ -7,6 +7,7 @@ type Props = {
   value?: string;
   onChange?: (newValue: string) => void;
   testId?: string;
+  min?: number;
 };
 
 const NumberInput = ({
@@ -15,7 +16,8 @@ const NumberInput = ({
   name,
   value,
   onChange,
-  testId
+  testId,
+  min = 0
 }: Props) => {
   return (
     <div className={style.container}>
@@ -25,6 +27,7 @@ const NumberInput = ({
         type={"number"}
         placeholder={placeholder}
         name={name}
+        min={min}
         value={value}
         onChange={(e) => onChange?.(e.target.value)}
       />
