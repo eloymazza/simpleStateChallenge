@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import useSimulateInvestment from "../../../hooks/useSimulateInvestment";
 import Card from "../../UI/Card";
 import styles from "./SimulationStep.module.css";
+import Spinner from "../../UI/Spinner";
 
 type Props = {
   currency: string;
@@ -26,7 +27,7 @@ const SimulationStep = ({
   }, [loading, error, simulationResult]);
 
   if (loading) {
-    return <div> loading</div>;
+    return <Spinner text='Simulando inversion...' />;
   }
 
   if (error) {
@@ -34,11 +35,11 @@ const SimulationStep = ({
   }
 
   if (!simulationResult) {
-    return <div>Empty simulation results</div>;
+    return null;
   }
 
   const { profitability_amount, profitability, mont_term, parking, payment } =
-    simulationResult;
+    simulationResult!;
 
   const [parsedType] = type.split("(");
 

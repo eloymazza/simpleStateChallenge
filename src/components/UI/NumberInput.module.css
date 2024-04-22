@@ -11,6 +11,18 @@
   border: var(--input-border);
   padding: var(--spacing-x3);
   border: 1xp solid gray;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-medium);
   font-size: var(--font-size--medium);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.container input:focus {
+  outline: none;
+  border: 1px solid var(--border-color);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }

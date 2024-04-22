@@ -31,3 +31,10 @@
 .row > div {
   width: 45%;
 }
+
+.paymentMethodSkeleton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
