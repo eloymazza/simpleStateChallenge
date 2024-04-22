@@ -37,6 +37,7 @@ const UploadPaymentCommitment = ({ handleFileLoad }: Props) => {
         <input
           id='fileInput'
           type='file'
+          data-testid='file-input'
           className={styles.uploadInput}
           accept='.pdf, .jpg, .jpeg, .png'
           style={{ display: "none" }}

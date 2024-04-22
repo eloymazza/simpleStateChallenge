@@ -15,6 +15,7 @@ export const fetchInvestmentTypes = async (): Promise<InvestmentsTypeBody> => {
         Authorization: `Bearer ${token}`
       }
     });
+
     return await response.json();
   } catch (error) {
     console.error("Error: ", error);

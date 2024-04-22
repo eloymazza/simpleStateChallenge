@@ -20,6 +20,7 @@ const ConfigurationStep = ({ setConfig }: Props) => {
       <div className={styles.controlGroup}>
         <div>
           <CustomSelect
+            testId='investment-type'
             label='Tipo de Inversión*'
             options={investmensTypesOptions}
             onChange={(value: string) => setConfig("type", value)}
@@ -30,12 +31,14 @@ const ConfigurationStep = ({ setConfig }: Props) => {
           </p>
         </div>
         <CustomSelect
+          testId='currency'
           label='Moneda*'
           options={currenciesOptions}
           onChange={(value: string) => setConfig("currency", value)}
           loading={loadingCurrencies}
         />
         <NumberInput
+          testId='amount'
           label='Monto a invertir*'
           onChange={(value) => setConfig("amount", value)}
           min={0}

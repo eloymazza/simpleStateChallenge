@@ -15,9 +15,10 @@ type Props = {
   options: Option[];
   onChange: (value: string) => void;
   loading?: boolean;
+  testId?: string;
 };
 
-const CustomSelect = ({ label, options, onChange }: Props) => {
+const CustomSelect = ({ label, options, onChange, testId }: Props) => {
   const customStyles = {
     control: (baseStyles) => ({
       ...baseStyles,
@@ -56,9 +57,10 @@ const CustomSelect = ({ label, options, onChange }: Props) => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid={`${testId + "-container"}`}>
       <label>{label}</label>
       <Select
+        testId={testId}
         onChange={(option: Option | null) => {
           if (!option) return;
           onChange(option.value);
