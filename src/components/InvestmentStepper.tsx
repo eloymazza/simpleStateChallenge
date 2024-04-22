@@ -11,7 +11,6 @@ import {
 import StepperBackButton from "./steps/StepperBackButton";
 import SimulationStep from "./steps/simulationStep/SimulationStep";
 import PaymentStep from "./steps/paymentStep/PaymentStep";
-import TermsAndConditions from "./steps/paymentStep/TermsAndConditions";
 import useModal from "../hooks/useModal";
 import Modal from "./UI/Modal";
 import InvestmentRegisteredModal from "./InvestmentRegisteredModal";
@@ -109,16 +108,12 @@ const InvestmentStepper = () => {
         />
       )}
       {step === PAYMENT_STEP && (
-        <>
-          <PaymentStep
-            currency={investementConfig.currency}
-            amount={investementConfig.amount}
-            handleFileLoad={handleFileLoad}
-          />
-          <TermsAndConditions
-            onTermsAndConditionsChange={handleTermsAndConditionsChange}
-          />
-        </>
+        <PaymentStep
+          currency={investementConfig.currency}
+          amount={investementConfig.amount}
+          handleFileLoad={handleFileLoad}
+          handleTermsAndConditionsChange={handleTermsAndConditionsChange}
+        />
       )}
       <div className={styles.continueButtonContainer}>
         {step !== PAYMENT_STEP ? (

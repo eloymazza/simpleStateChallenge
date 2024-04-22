@@ -8,6 +8,7 @@ const TermsAndConditions = ({ onTermsAndConditionsChange }: Props) => {
   return (
     <div className={styles.container}>
       <input
+        className={styles.checkbox}
         type='checkbox'
         id='termsAndConditions'
         onChange={(e) => onTermsAndConditionsChange(e.target.checked)}
