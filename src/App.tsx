@@ -11,7 +11,8 @@ const {
   NEW_INVESTMENT,
   FORGOT_PASSWORD,
   LEARN_MORE,
-  TERMS_AND_CONDITIONS
+  TERMS_AND_CONDITIONS,
+  MOVEMENTS
 } = ROUTES_PATHS;
 
 function App() {
@@ -19,8 +20,9 @@ function App() {
     <Routes>
       <Route path={LOGIN} element={<Login />} />
       <Route path={NEW_INVESTMENT} element={<Layout />}>
-        <Route path={NEW_INVESTMENT} element={<NewInvestment />} />
+        <Route index path={NEW_INVESTMENT} element={<NewInvestment />} />
       </Route>
+      <Route path={MOVEMENTS} element={<UnderConstruction />} />
       <Route path={FORGOT_PASSWORD} element={<UnderConstruction />} />
       <Route path={LEARN_MORE} element={<UnderConstruction />} />
       <Route path={TERMS_AND_CONDITIONS} element={<UnderConstruction />} />

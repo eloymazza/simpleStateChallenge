@@ -12,28 +12,36 @@ import StepperBackButton from "./steps/StepperBackButton";
 import SimulationStep from "./steps/simulationStep/SimulationStep";
 import PaymentStep from "./steps/paymentStep/PaymentStep";
 import TermsAndConditions from "./steps/paymentStep/TermsAndConditions";
+import useModal from "../hooks/useModal";
+import Modal from "./UI/Modal";
+import InvestmentRegisteredModal from "./InvestmentRegisteredModal";
+import useStoreInvestment from "../hooks/useStoreInvestment";
 
 export type InvestmentConfig = {
   type: string;
   currency: string;
   amount: string;
   simulationLoaded: boolean;
-  fileLoaded: boolean;
+  file: File | null;
   termsAndconditionsAccepted: boolean;
 };
 
 const InvestmentStepper = () => {
-  const { step, isNextStepEnabled, goNextStep, goPreviousStep } =
+  const { step, isNextStepEnabled, goNextStep, goPreviousStep, resetStepper } =
     useInvestmentStepper();
+
+  const { isModalOpen, handleOpenModal, handleCloseModal } = useModal();
 
   const [investementConfig, setInvestmentConfig] = useState<InvestmentConfig>({
     type: "",
     currency: "",
     amount: "",
     simulationLoaded: false,
-    fileLoaded: false,
+    file: null,
     termsAndconditionsAccepted: false
   });
+
+  const { storing, storeInvestment } = useStoreInvestment();
 
   const updateInvestmentConfig = (key: string, value: string | boolean) => {
     setInvestmentConfig({
@@ -49,10 +57,10 @@ const InvestmentStepper = () => {
     });
   };
 
-  const handleFileLoad = (loaded: boolean) => {
+  const handleFileLoad = (file: File | null) => {
     setInvestmentConfig({
       ...investementConfig,
-      fileLoaded: loaded
+      file
     });
   };
 
@@ -63,14 +71,24 @@ const InvestmentStepper = () => {
     });
   };
 
-  const handleFinish = () => {
-    alert("Inversión realizada con éxito");
+  const handleFinish = async () => {
+    const { status } = await storeInvestment("file");
+    if (status === "success") {
+      handleOpenModal();
+    } else {
+      alert("Error al guardar la inversión");
+    }
   };
 
   const stepEnabled = isNextStepEnabled(investementConfig);
 
   const handleContinue = () => {
     goNextStep();
+  };
+
+  const onCloseModal = () => {
+    resetStepper();
+    handleCloseModal();
   };
 
   return (
@@ -110,6 +128,8 @@ const InvestmentStepper = () => {
             disabled={!stepEnabled}
             size='large'
           />
+        ) : storing ? (
+          <p>Guardando inversión...</p>
         ) : (
           <Button
             label={"Finalizar"}
@@ -119,6 +139,11 @@ const InvestmentStepper = () => {
           />
         )}
       </div>
+      {isModalOpen && (
+        <Modal onClose={onCloseModal}>
+          <InvestmentRegisteredModal onClose={onCloseModal} />
+        </Modal>
+      )}
     </div>
   );
 };

@@ -12,6 +12,10 @@
   border: none;
 }
 
+.secondary {
+  background-color: var(--element-color-button-secondary);
+}
+
 .small {
   padding: var(--spacing-x3) var(--spacing-x6);
 }

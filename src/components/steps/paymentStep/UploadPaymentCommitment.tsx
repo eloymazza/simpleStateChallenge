@@ -4,7 +4,7 @@ import styles from "./UploadPaymentCommitment.module.css";
 import FileNameTag from "./FileNameTag";
 
 type Props = {
-  handleFileLoad: (value: boolean) => void;
+  handleFileLoad: (file: File | null) => void;
 };
 
 const UploadPaymentCommitment = ({ handleFileLoad }: Props) => {
@@ -14,13 +14,13 @@ const UploadPaymentCommitment = ({ handleFileLoad }: Props) => {
     const file = e.target.files?.[0];
     if (file) {
       setFile(file);
-      handleFileLoad(true);
+      handleFileLoad(file);
     }
   };
 
   const handleRemoveFile = () => {
     setFile(null);
-    handleFileLoad(false);
+    handleFileLoad(null);
   };
 
   return (

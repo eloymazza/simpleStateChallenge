@@ -1,5 +1,6 @@
 .Subtitle {
   font-size: var(--font-size--medium);
+
   font-weight: bolder;
   color: var(--text-color-title);
   margin: var(--spacing-x4) 0;
