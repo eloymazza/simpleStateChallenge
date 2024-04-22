@@ -10,3 +10,15 @@
   font-style: italic;
   font-size: var(--font-size--small);
 }
+
+@media screen and (max-width: 768px) {
+  .controlGroup {
+    column-gap: var(--spacing-x5);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .controlGroup {
+    grid-template-columns: 1fr;
+  }
+}

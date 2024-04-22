@@ -7,10 +7,10 @@
 }
 
 .container input {
-  height: var(--spacing-x11);
+  height: 2.6rem;
   border: var(--input-border);
-  padding: var(--spacing-x3);
-  border: 1xp solid gray;
+  padding: 10px;
+  border: 1px solid gray;
   border-radius: var(--border-radius-medium);
   font-size: var(--font-size--medium);
   -webkit-appearance: none;
