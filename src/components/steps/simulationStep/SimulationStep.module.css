@@ -28,3 +28,18 @@
 .row div {
   width: 45%;
 }
+
+@media screen and (max-width: 550px) {
+  .row {
+    flex-direction: column;
+    padding: var(--spacing-x5) 0 0 0;
+  }
+
+  .row div {
+    width: 100%;
+  }
+
+  .header {
+    padding-bottom: var(--spacing-x5);
+  }
+}

@@ -38,10 +38,11 @@ const SimulationStep = ({
     return null;
   }
 
-  const { profitability_amount, profitability, mont_term, parking, payment } =
-    simulationResult!;
+  const { profitability, mont_term, parking, payment } = simulationResult!;
 
   const [parsedType] = type.split("(");
+
+  const anualEarning = (profitability / 100) * Number(amount);
 
   return (
     <Card customClass={styles.simulationStepCard}>
@@ -83,10 +84,13 @@ const SimulationStep = ({
           <div>
             Recibiras al final del plazo:{" "}
             <span>
-              {currency} {Number(amount) + profitability_amount} $
+              {currency} {Number(amount) + Number(anualEarning)} $
             </span>
           </div>
-          <div> Cuando cobraras las ganancias: {payment} </div>
+          <div>
+            {" "}
+            Cuando cobraras las ganancias: <span>{payment} </span>{" "}
+          </div>
         </div>
       </div>
     </Card>

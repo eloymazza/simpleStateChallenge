@@ -70,9 +70,3 @@
   --modal-max-width: 500px;
   --element-color-button-secondary: white;
 }
-
-@media screen and (max-width: 500px) {
-  :root {
-    --base-space: calc(1rem / 3);
-  }
-}

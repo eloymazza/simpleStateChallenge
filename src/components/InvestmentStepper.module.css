@@ -17,3 +17,13 @@
   text-align: right;
   margin-top: var(--spacing-x3);
 }
+
+@media screen and (max-width: 550px) {
+  .continueButtonContainer {
+    text-align: left;
+  }
+
+  .continueButtonContainer button {
+    padding: var(--spacing-x3) var(--spacing-x8);
+  }
+}
