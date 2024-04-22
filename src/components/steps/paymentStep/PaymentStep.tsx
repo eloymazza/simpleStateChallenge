@@ -8,7 +8,7 @@ import UploadPaymentCommitment from "./UploadPaymentCommitment";
 type Props = {
   amount: string;
   currency: string;
-  handleFileLoad: (value: boolean) => void;
+  handleFileLoad: (file: File | null) => void;
 };
 
 const PaymentStep = ({ amount, currency, handleFileLoad }: Props) => {

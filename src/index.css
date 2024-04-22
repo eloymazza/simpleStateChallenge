@@ -64,6 +64,10 @@
 
   /* Elements */
   --stepper-section-max-width: 58.125rem;
+  --backdrop-color: #8f8f8f;
+  --backdrop-opacity: 0.8;
+  --modal-max-width: 500px;
+  --element-color-button-secondary: white;
 }
 
 @media screen and (max-width: 500px) {

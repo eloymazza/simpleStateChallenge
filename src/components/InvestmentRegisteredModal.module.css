@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: var(--background-color--primary);
+  border-radius: var(--border-radius-large);
+  max-width: var(--modal-max-width);
+  padding: var(--spacing-x10) var(--spacing-x8);
+  gap: var(--spacing-x5);
+}
+
+.image {
+  margin-bottom: var(--spacing-x2);
+}
+
+.container p {
+  text-align: center;
+  width: 70%;
+  font-weight: 400;
+  margin-bottom: var(--spacing-x5);
+  line-height: 1.5;
+}
+
+.closeButton {
+  position: absolute;
+  right: 4%;
+  top: 5%;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}

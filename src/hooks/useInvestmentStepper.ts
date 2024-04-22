@@ -22,19 +22,22 @@ export const useInvestmentStepper = () => {
     setStepNumber(stepNumber - 1);
   };
 
+  const resetStepper = () => {
+    setStepNumber(0);
+  };
+
   const isNextStepEnabled = ({
     type,
     currency,
     amount,
     simulationLoaded,
-    fileLoaded,
+    file,
     termsAndconditionsAccepted
   }: InvestmentConfig) => {
     if (stepName === CONFIGURATION_STEP)
       return !!type && !!currency && !!amount;
     if (stepName === SIMULATION_STEP) return simulationLoaded;
-    if (stepName === PAYMENT_STEP)
-      return fileLoaded && termsAndconditionsAccepted;
+    if (stepName === PAYMENT_STEP) return file && termsAndconditionsAccepted;
     return false;
   };
 
@@ -42,6 +45,7 @@ export const useInvestmentStepper = () => {
     step: stepName,
     goNextStep,
     goPreviousStep,
-    isNextStepEnabled
+    isNextStepEnabled,
+    resetStepper
   };
 };
