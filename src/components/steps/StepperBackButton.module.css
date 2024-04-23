@@ -3,5 +3,5 @@
 }
 
 .hide {
-  display: hidden;
+  visibility: hidden;
 }

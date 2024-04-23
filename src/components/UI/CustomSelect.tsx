@@ -11,14 +11,23 @@ type Option = {
 export type Options = Option[];
 
 type Props = {
+  value?: string;
   label: string;
   options: Option[];
   onChange: (value: string) => void;
   loading?: boolean;
   testId?: string;
+  readonly?: boolean;
 };
 
-const CustomSelect = ({ label, options, onChange, testId }: Props) => {
+const CustomSelect = ({
+  value,
+  label,
+  options,
+  onChange,
+  testId,
+  readonly = false
+}: Props) => {
   const customStyles = {
     control: (baseStyles) => ({
       ...baseStyles,
@@ -28,8 +37,7 @@ const CustomSelect = ({ label, options, onChange, testId }: Props) => {
       },
       border: "1px solid gray",
       boxShadow: "none",
-      borderRadius: "var(--border-radius-medium)",
-      cursor: "pointer"
+      borderRadius: "var(--border-radius-medium)"
     }),
     menu: (baseStyles) => ({
       ...baseStyles,
@@ -61,6 +69,7 @@ const CustomSelect = ({ label, options, onChange, testId }: Props) => {
       <label>{label}</label>
       <Select
         testId={testId}
+        value={options.find((option) => option.value === value)}
         onChange={(option: Option | null) => {
           if (!option) return;
           onChange(option.value);
@@ -70,6 +79,7 @@ const CustomSelect = ({ label, options, onChange, testId }: Props) => {
         isClearable={false}
         backspaceRemovesValue={true}
         placeholder='Seleccionar'
+        isDisabled={readonly}
       />
     </div>
   );

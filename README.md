@@ -8,21 +8,21 @@
 
 # Install dependencies:
 
-command: `npm i`
+`npm i`
 
 # Stat app
 
-command: `npm run dev`
+`npm run dev`
 
 ## Run e2e tests headless
 
 prerrequisite: you must have the app running
-command: `npm run cypress`
+`npm run cypress`
 
 ## Run e2e in browser
 
-command: `npm run cypress:open`
+`npm run cypress:open`
 
 ## Run unit tests
 
-command: `npm run test`
+`npm run test`

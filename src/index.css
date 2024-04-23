@@ -70,3 +70,10 @@
   --modal-max-width: 500px;
   --element-color-button-secondary: white;
 }
+
+/*Improve responsiveness for low height screens */
+@media screen and (max-height: 700px) {
+  :root {
+    --base-space: calc(1rem / 6);
+  }
+}

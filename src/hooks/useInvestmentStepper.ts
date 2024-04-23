@@ -18,8 +18,20 @@ export const useInvestmentStepper = () => {
   };
 
   const goPreviousStep = () => {
-    if (stepNumber === 0) return;
-    setStepNumber(stepNumber - 1);
+    if (stepName === CONFIGURATION_STEP) return CONFIGURATION_STEP;
+    if (stepName === SIMULATION_STEP) {
+      setStepNumber(stepNumber - 1);
+      return SIMULATION_STEP;
+    }
+    if (stepName === PAYMENT_STEP) {
+      resetStepper();
+      return PAYMENT_STEP;
+    }
+    if (stepName === SIMULATION_STEP) {
+      setStepNumber(stepNumber - 1);
+      return SIMULATION_STEP;
+    }
+    return CONFIGURATION_STEP;
   };
 
   const resetStepper = () => {
