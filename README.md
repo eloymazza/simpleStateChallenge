@@ -1,33 +1,28 @@
-# simpleStateChallenge
-SimpleState React Developer Challenge
+### Readme
 
-# React + TypeScript + Vite
+### Welcome to SimpleState React Challenge Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Start project
 
-Currently, two official plugins are available:
+(You can use [pnpm|npm])
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Install dependencies:
 
-## Expanding the ESLint configuration
+command: `npm i`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# Stat app
 
-- Configure the top-level `parserOptions` property like this:
+command: `npm run dev`
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Run e2e tests headless
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+prerrequisite: you must have the app running
+command: `npm run cypress`
+
+## Run e2e in browser
+
+command: `npm run cypress:open`
+
+## Run unit tests
+
+command: `npm run test`

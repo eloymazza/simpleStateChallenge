@@ -31,12 +31,17 @@ const InvestmentRegisteredModal = ({ onClose }: Props) => {
       </p>
       <div className={styles.controls}>
         <Button
+          testId='exit-button'
           handleClick={onClose}
           label='Salir'
           variant='secondary'
           size='large'
         />
-        <Button handleClick={handleSeeMovements} label='Ver movimiento' />
+        <Button
+          testId='see-movements-button'
+          handleClick={handleSeeMovements}
+          label='Ver movimiento'
+        />
       </div>
     </div>
   );
