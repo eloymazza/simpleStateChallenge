@@ -10,8 +10,12 @@ type Props = {
 const UploadPaymentCommitment = ({ handleFileLoad }: Props) => {
   const [file, setFile] = useState<File | null>(null);
 
+  const [value, setValue] = useState("");
+
   const handleAddFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log("entro");
     const file = e.target.files?.[0];
+    console.log(file);
     if (file) {
       setFile(file);
       handleFileLoad(file);
@@ -19,6 +23,7 @@ const UploadPaymentCommitment = ({ handleFileLoad }: Props) => {
   };
 
   const handleRemoveFile = () => {
+    setValue("");
     setFile(null);
     handleFileLoad(null);
   };
@@ -34,7 +39,9 @@ const UploadPaymentCommitment = ({ handleFileLoad }: Props) => {
       >
         <Icon src='attach-file' size={50} />
         <p>Arrastra la imagen o adjuntala aqui</p>
+
         <input
+          value={value}
           id='fileInput'
           type='file'
           data-testid='file-input'

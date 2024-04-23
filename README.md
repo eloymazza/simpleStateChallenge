@@ -1,28 +1,30 @@
-### Readme
+# Readme
 
-### Welcome to SimpleState React Challenge Project
+## Welcome to SimpleState React Challenge Project
 
-## Start project
+## Instructions:
 
-(You can use [pnpm|npm])
+### Start project (You can use pnpm or npm)
 
-# Install dependencies:
+## 1. Install dependencies:
 
 `npm i`
 
-# Stat app
+## 2. Start the App
 
 `npm run dev`
 
-## Run e2e tests headless
+## 3.a Run e2e tests headless
 
-prerrequisite: you must have the app running
+> IMPORTANT
+> You must have the app running (`npm run dev`)
+
 `npm run cypress`
 
-## Run e2e in browser
+## 3.b Run e2e in browser
 
 `npm run cypress:open`
 
-## Run unit tests
+## 4. Run unit tests
 
 `npm run test`
