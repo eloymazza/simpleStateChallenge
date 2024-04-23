@@ -42,7 +42,7 @@ const SimulationStep = ({
 
   const [parsedType] = type.split("(");
 
-  const anualEarning = (profitability / 100) * Number(amount);
+  const anualEarning = ((profitability / 100) * Number(amount)).toFixed(2);
 
   return (
     <Card customClass={styles.simulationStepCard}>
@@ -57,7 +57,7 @@ const SimulationStep = ({
           <div>
             Ganancia anual estimada:{" "}
             <span>
-              {currency} ${(profitability / 100) * Number(amount)}
+              {currency} ${anualEarning}
             </span>
           </div>
         </div>

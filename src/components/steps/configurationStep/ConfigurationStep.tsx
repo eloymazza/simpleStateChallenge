@@ -8,9 +8,11 @@ import useInvestmentsTypes from "../../../hooks/useInvestmentsTypes";
 
 type Props = {
   setConfig: (key: keyof InvestmentConfig, value: string) => void;
+  readonly: boolean;
+  config: InvestmentConfig;
 };
 
-const ConfigurationStep = ({ setConfig }: Props) => {
+const ConfigurationStep = ({ setConfig, readonly, config }: Props) => {
   const { investmensTypesOptions, loading: loadingInvestmentsTypes } =
     useInvestmentsTypes();
   const { currenciesOptions, loading: loadingCurrencies } = useCurrencies();
@@ -20,28 +22,34 @@ const ConfigurationStep = ({ setConfig }: Props) => {
       <div className={styles.controlGroup}>
         <div>
           <CustomSelect
+            value={config.type}
             testId='investment-type'
             label='Tipo de Inversión*'
             options={investmensTypesOptions}
             onChange={(value: string) => setConfig("type", value)}
             loading={loadingInvestmentsTypes}
+            readonly={readonly}
           />
           <p className={styles.subLabel}>
             <a href='/learn-more'>Ver más sobre tipos de inversión</a>
           </p>
         </div>
         <CustomSelect
+          value={config.currency}
           testId='currency'
           label='Moneda*'
           options={currenciesOptions}
           onChange={(value: string) => setConfig("currency", value)}
           loading={loadingCurrencies}
+          readonly={readonly}
         />
         <NumberInput
+          value={config.amount}
           testId='amount'
           label='Monto a invertir*'
           onChange={(value) => setConfig("amount", value)}
           min={0}
+          readonly={readonly}
         />
       </div>
     </Card>

@@ -4,6 +4,7 @@ import Title from "./UI/Title";
 import styles from "./InvestmentStepper.module.css";
 import ConfigurationStep from "./steps/configurationStep/ConfigurationStep";
 import {
+  CONFIGURATION_STEP,
   PAYMENT_STEP,
   SIMULATION_STEP,
   useInvestmentStepper
@@ -31,18 +32,25 @@ const InvestmentStepper = () => {
 
   const { isModalOpen, handleOpenModal, handleCloseModal } = useModal();
 
-  const [investementConfig, setInvestmentConfig] = useState<InvestmentConfig>({
+  const defaultConfig: InvestmentConfig = {
     type: "",
     currency: "",
     amount: "",
     simulationLoaded: false,
     file: null,
     termsAndconditionsAccepted: false
+  };
+
+  const [investementConfig, setInvestmentConfig] = useState<InvestmentConfig>({
+    ...defaultConfig
   });
 
   const { storing, storeInvestment } = useStoreInvestment();
 
-  const updateInvestmentConfig = (key: string, value: string | boolean) => {
+  const updateInvestmentConfig = (
+    key: string,
+    value: string | boolean | null
+  ) => {
     setInvestmentConfig({
       ...investementConfig,
       [key]: value
@@ -87,19 +95,47 @@ const InvestmentStepper = () => {
 
   const onCloseModal = () => {
     resetStepper();
+    resetConfig();
     handleCloseModal();
+  };
+
+  const resetConfig = () => {
+    setInvestmentConfig({
+      ...defaultConfig
+    });
+  };
+
+  const handleBack = () => {
+    const stepName = goPreviousStep();
+    if (stepName === SIMULATION_STEP) {
+      updateInvestmentConfig("simulationLoaded", false);
+    }
+    if (stepName === PAYMENT_STEP) {
+      setInvestmentConfig({
+        ...investementConfig,
+        file: null,
+        termsAndconditionsAccepted: false
+      });
+    }
+    if (stepName === CONFIGURATION_STEP) {
+      resetConfig();
+    }
   };
 
   return (
     <div className={styles.stepperContainer}>
       <div className={styles.backButtonContainer}>
-        <StepperBackButton step={step} onClick={goPreviousStep} />
+        <StepperBackButton step={step} onClick={handleBack} />
       </div>
       <div className={styles.titleContainer}>
         <Title text='Nueva inversión' />
       </div>
       {step !== PAYMENT_STEP && (
-        <ConfigurationStep setConfig={updateInvestmentConfig} />
+        <ConfigurationStep
+          setConfig={updateInvestmentConfig}
+          config={investementConfig}
+          readonly={step !== CONFIGURATION_STEP}
+        />
       )}
       {step === SIMULATION_STEP && (
         <SimulationStep
